@@ -1,0 +1,12 @@
+$(document).ready(function() {
+    console.log("ready!");
+    fill(".tor-relay-badge")
+});
+
+function fill(card) {
+    $(card).width("500px");
+    $(card).height("250px");
+    $(card).css({
+        backgroundColor: "#000000",
+    });
+}

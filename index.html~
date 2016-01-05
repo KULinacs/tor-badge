@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery-2.1.4.js"></script>
+    <script src="tor-badge.js"></script>
+  </head>
+  <body>
+    <h1>Tor Badge</h1>
+    <div class="tor-relay-badge" id="5E03B2F79526A488DB6BBAB8DDE3DA867B7D27C6"> </div>
+  </body>
+</html>
