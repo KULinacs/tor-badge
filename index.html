@@ -3,10 +3,71 @@
   <head>
     <script src="jquery-2.1.4.js"></script>
     <script src="tor-badge.js"></script>
+    <script>
+      function update() {
+      $(".tor-badge").attr("id", $("#fingerprint").val());
+      var badgeOptions = ""; 
+      if ($("#running").is(":checked")) {
+      badgeOptions += "running,";
+      }
+      if ($("#total-uptime").is(":checked")) {
+      badgeOptions += "total-uptime,";
+      }
+      if ($("#current-uptime").is(":checked")) {
+      badgeOptions += "current-uptime,";
+      }
+      if ($("#location").is(":checked")) {
+      badgeOptions += "location,";
+      }
+      if ($("#bandwidth").is(":checked")) {
+      badgeOptions += "bandwidth,";
+      }
+      if ($("#traffic").is(":checked")) {
+      badgeOptions += "traffic,";
+      }
+      if ($("#hostname").is(":checked")) {
+      badgeOptions += "hostname,";
+      }
+      if ($("#platform").is(":checked")) {
+      badgeOptions += "platform,";
+      }
+      if ($("#weight").is(":checked")) {
+      badgeOptions += "weight,";
+      }
+      if ($("#weight-fraction").is(":checked")) {
+      badgeOptions += "weight-fraction,";
+      }
+      if ($("#contact").is(":checked")) {
+      badgeOptions += "contact,";
+      }
+      if ($("#flags").is(":checked")) {
+      badgeOptions += "flags,";
+      }
+      $(".tor-badge").attr("data-options", badgeOptions);
+      fill(".tor-badge");
+      }
+    </script>
     <meta charset="UTF-8">
   </head>
   <body>
     <h1>Tor Badge</h1>
-    <div class="tor-relay-badge" id="5E03B2F79526A488DB6BBAB8DDE3DA867B7D27C6"> </div>
+    <div class="tor-badge" id="5E03B2F79526A488DB6BBAB8DDE3DA867B7D27C6" data-options="running, total-uptime, current-uptime, location, bandwidth, traffic, hostname, platform, weight, weight-fraction, contact, flags"></div>
+    <h3>Test Code Below</h3>
+    <form submit="none">
+      Fingerprint: <input id="fingerprint" type="text" name="fingerprint"></br>
+      <input id="running" type="checkbox" name="running" value="running"> Running
+      <input id="total-uptime" type="checkbox" name="total-uptime" value="total-uptime"> Total Uptime
+      <input id="current-uptime" type="checkbox" name="current-uptime" value="current-uptime"> Current Uptime
+      <input id="location" type="checkbox" name="location" value="location"> Location</br>
+      <input id="bandwidth" type="checkbox" name="bandwidth" value="bandwidth"> Bandwidth
+      <input id="traffic" type="checkbox" name="traffic" value="traffic"> Traffic
+      <input id="hostname" type="checkbox" name="hostname" value="hostname"> Hostname
+      <input id="platform" type="checkbox" name="platform" value="platform"> Platform</br>
+      <input id="weight" type="checkbox" name="weight" value="weight"> Weight
+      <input id="weight-fraction" type="checkbox" name="weight-fraction" value="weight-fraction"> Weight Fraction
+      <input id="contact" type="checkbox" name="contact" value="contact"> Contact
+      <input id="flags" type="checkbox" name="flags" value="flags"> Flags</br>
+      <input type="button" onclick="update()" value="Update">
+    </form>
   </body>
 </html>
